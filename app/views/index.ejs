@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if(user) { %>
+      <a href="/signout">Sign out</a>
+    <% } else { %>
+      <a href="/signup">Sign up</a>
+      <a href="/signin">Sign in</a>
+    <% } %>
+
+    <section ng-view></section>
+
+
+    <script type="text/javascript">
+      window.user = <%- user || 'null' %>;
+    </script>
+
+
+    <script type="text/javascript" src="/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+
+    <script type="text/javascript" src="/example/example.module.js"></script>
+    <script type="text/javascript" src="/example/controllers/example.controller.js"></script>
+    <script type="text/javascript" src="/example/config/example.routes.js"></script>
+
+    <script type="text/javascript" src="/cusers/users.module.js"></script>
+    <script type="text/javascript" src="/cusers/services/authentication.service.js"></script>
+
+    <script type="text/javascript" src="/application.js"></script>
+
+  </body>
+</html>
