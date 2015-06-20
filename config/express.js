@@ -47,6 +47,8 @@ module.exports = function(){
   require('../app/routes/index.js')(app);
   // User routes
   require('../app/routes/users.js')(app);
+  // Todolist routes
+  require('../app/routes/todos.js')(app);
 
   // Set up the static path
   app.use(express.static('./public'));
