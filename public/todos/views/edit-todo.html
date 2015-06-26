@@ -1,0 +1,34 @@
+<section data-ng-controller="TodosController" data-ng-init="findOne()">
+  <h1>Edit Todo</h1>
+
+  <form data-ng-submit="update()" novalidate>
+    <div>
+      <label for="title">Title</label>
+      <div>
+        <input type="text" data-ng-model="todo.title" id="title" placeholder="Title" required />
+      </div>
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <div>
+        <textarea data-ng-model="todo.description" id="description" cols="30" rows="10" place="Content"></textarea>
+      </div>
+    </div>
+
+    <div>
+      <label for="complete">Complete</label>
+      <div>
+        <input type="checkbox" data-ng-model="todo.complete" id="complete" />
+      </div>
+    </div>
+
+    <div>
+      <input type="submit" value="Update" />
+    </div>
+
+    <div data-ng-show="error">
+      <strong data-ng-bind="error"></strong>
+    </div>
+  </form>
+</section>

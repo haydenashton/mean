@@ -31,7 +31,7 @@ exports.list = function(req, res){
           });
         }
         else {
-          res.json(articles);
+          res.json(todos);
         }
       });
 };
@@ -57,7 +57,7 @@ exports.update = function(req, res){
                 });
     }
     else {
-      res.json(article);
+      res.json(todo);
     }
   });
 };

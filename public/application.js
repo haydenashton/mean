@@ -2,7 +2,7 @@ var mainApplicationModuleName = 'mean';
 
 // Declare main module and dependencies
 var mainApplicationModule = angular.module(mainApplicationModuleName,
-    ['ngRoute', 'users' 'example']);
+    ['ngResource', 'ngRoute', 'users', 'example', 'todos']);
 
 // Configure routes to start with #! for SEO
 mainApplicationModule.config(['$locationProvider',

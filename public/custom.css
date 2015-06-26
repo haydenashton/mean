@@ -1,0 +1,8 @@
+.todo-list { width: 50%; margin: 25px 0px 0px 30px; }
+.todo-entry {
+  border: thin solid lightgray;
+  margin-bottom:10px;
+  padding:10px;
+}
+
+#new-todo { display:none; }

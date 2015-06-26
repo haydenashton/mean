@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 
 var UserSchema = new Schema({
-  firseName: String,
+  firstName: String,
   lastName: String,
   email: {
     type: String,
@@ -112,7 +112,7 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback){
 
 // Static method
 UserSchema.statics.findOneByUsername = function(username, callback){
-  this.findOne({username: new RegExp(username, 'i')}, callback);
+  return this.findOne({username: new RegExp(username, 'i')}, callback);
 }
 
 

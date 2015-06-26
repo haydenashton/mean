@@ -1,0 +1,16 @@
+<section data-ng-controller="TodosController" data-ng-init="findOne()">
+  <h1 data-ng-bind="todo.title"></h1>
+
+  <div data-ng-show="authentication.user._id == todo.creator._id">
+    <a href="/#!/todos/{{todo._id}}/edit">Edit</a>
+    <a href="#" data-ng-click="delete();">Delete</a>
+  </div>
+
+  <small>
+    <em>Created</em>
+    <em data-ng-bind="todo.created | date:'mediumDate'"></em>
+    <em>by</em>
+    <em data-ng-bind="todo.creator.fullName"></em>
+  </small>
+  <p data-ng-bind="todo.description"></p>
+</section>
