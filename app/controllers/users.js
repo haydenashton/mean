@@ -62,7 +62,8 @@ exports.renderSignin = function(req, res, next){
   if(!req.user){
     res.render('signin', {
       title: 'Sign-in form',
-      messages: req.flash('error') || req.flash('info')
+      messages: req.flash('error') || req.flash('info'),
+      user: null
     });
   }
   else {
@@ -75,7 +76,8 @@ exports.renderSignup = function(req, res, next){
   if(!req.user){
     res.render('signup', {
       title: 'Sign-up form',
-      messages: req.flash('error')
+      messages: req.flash('error'),
+      user: null
     });
   }
   else {

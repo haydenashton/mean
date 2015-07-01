@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title><%= title %></title>
-
-    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap-theme.css"/>
-    <link rel="stylesheet" href="custom.css"/>
-  </head>
-  <body>
+<% include header %>
     <div class="container-fluid">
       <section ng-view></section>
     </div>
@@ -37,5 +28,4 @@
 
     <script type="text/javascript" src="/application.js"></script>
 
-  </body>
-</html>
+<% include footer %>

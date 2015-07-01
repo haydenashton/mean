@@ -1,64 +1,71 @@
 <section data-ng-controller="TodosController" data-ng-init="find()">
-  <h1>Todos</h1>
+  <h1>Todo List</h1>
 
   <div>
-    <button class="btn btn-primary" data-ng-click="toggleNew();"><i class="glyphicon glyphicon-plus"></i> New</button>
-
-    <div id="new-todo">
-      <form data-ng-submit="create()" novalidate>
-        <div>
-          <label for="title">Title</label>
+    <div class="row">
+      <div class="col-sm-3" id="new-todo">
+        <form data-ng-submit="create()" novalidate>
           <div>
-            <input type="text" data-ng-model="title" id="title" placeholder="Title" required />
+            <label for="title">Title</label>
+            <div>
+              <input type="text" data-ng-model="title" id="title" class="form-control" placeholder="Title" required />
+            </div>
           </div>
-        </div>
 
-        <div>
-          <label for="description">Description</label>
+          <br/>
+
           <div>
-            <textarea data-ng-model="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
-          </div>
-        </div>
-
-        <div>
-          <input type="submit" />
-        </div>
-
-        <div data-ng-show="error">
-          <strong data-ng-bind="error"></strong>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="todo-list container-fluid">
-
-      <div class="todo-entry" data-ng-repeat="todo in todos | orderBy: '-complete': true">
-        <button type="button" data-ng-click="delete(todo);" class="close"><span>&times;</span></button>
-        <br/>
-
-        <div class="row">
-          <div class="col-sm-10">
-            <a data-ng-href="#!/todos/{{todo._id}}" data-ng-bind="todo.title"></a>
-
-            <br/>
-            <p data-ng-bind="todo.description"></p>
+            <label for="description">Description</label>
+            <div>
+              <textarea data-ng-model="description" id="description" class="form-control" cols="30" rows="10" placeholder="Description"></textarea>
+            </div>
           </div>
 
-          <div class="col-sm-2">
-            <input type="checkbox" data-ng-change="update(todo);" ng-model="todo.complete"/>
-          </div>
-        </div>
+          <br/>
 
-        <small>Created:</small>
-        <small data-ng-bind="todo.created | date: 'medium'"></small>
-        <small>by</small>
-        <small data-ng-bind="todo.creator.fullName"></small>
+          <div>
+            <input type="submit" class="btn btn-primary" value="Create" />
+          </div>
+
+          <div data-ng-show="error">
+            <strong data-ng-bind="error"></strong>
+          </div>
+        </form>
       </div>
 
+      <div class="todo-list container-fluid col-sm-7">
 
-    <div data-ng-hide="!todos || todos.length">
-      No Todos yet. <a href="/#!/todos/create">Create one</a>
+          <div class="todo-entry" data-ng-repeat="todo in todos | orderBy: '-complete': true">
+
+            <div class="row">
+              <div class="col-sm-11">
+                <h4 data-ng-bind="todo.title"></h4>
+              </div>
+              <div class="col-sm-1">
+                <button type="button" data-ng-click="delete(todo);" class="close"><span>&times;</span></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-11">
+                <p data-ng-bind="todo.description"></p>
+              </div>
+              <div class="col-sm-1">
+                <input type="checkbox" data-ng-change="update(todo);" ng-model="todo.complete"/>
+              </div>
+            </div>
+
+            <small>Created:</small>
+            <small data-ng-bind="todo.created | date: 'medium'"></small>
+            <small>by</small>
+            <small data-ng-bind="todo.creator.fullName"></small>
+          </div>
+
+
+        <div data-ng-hide="!todos || todos.length">
+          No Todos yet.
+        </div>
+      </div>
     </div>
   </div>
 </section>

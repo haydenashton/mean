@@ -71,11 +71,5 @@ angular.module('todos')
                            });
                          }
                        };
-
-
-                       $scope.toggleNew = function(){
-                         $("#new-todo").toggle(400);
-                       };
-
                      }
                    ])

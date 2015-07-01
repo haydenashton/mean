@@ -3,6 +3,7 @@
   border: thin solid lightgray;
   margin-bottom:10px;
   padding:10px;
+  border-radius:10px;
 }
 
-#new-todo { display:none; }
+div.mainForm { max-width: 700px; width:30%; margin:0 auto; }
